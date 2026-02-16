@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support – Parkplatz Notifier</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-dark: #0a0a0b;
+            --color-light: #fafaf9;
+            --color-accent: #22c55e;
+            --color-surface: #18181b;
+            --color-surface-elevated: #27272a;
+            --color-muted: #71717a;
+            --color-border: #3f3f46;
+            --font-display: 'Instrument Serif', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--color-dark);
+            color: var(--color-light);
+            line-height: 1.7;
+        }
+        
+        nav {
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+            text-decoration: none;
+            color: var(--color-light);
+        }
+        
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+        
+        .back-link {
+            color: var(--color-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--color-light);
+        }
+        
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            color: var(--color-muted);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .contact-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .contact-card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-card p {
+            color: var(--color-muted);
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.5rem;
+            background: var(--color-accent);
+            color: var(--color-dark);
+            text-decoration: none;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .contact-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
+        }
+        
+        h2.faq-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--color-accent);
+        }
+        
+        .faq-item {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        
+        .faq-question:hover {
+            background: var(--color-surface-elevated);
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--color-muted);
+            transition: transform 0.2s;
+        }
+        
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        .faq-answer-content {
+            padding: 0 1.5rem 1.25rem;
+            color: var(--color-muted);
+        }
+        
+        .tips-section {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--color-border);
+        }
+        
+        .tips-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--color-accent);
+        }
+        
+        .tip {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1.25rem;
+            background: var(--color-surface);
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+        }
+        
+        .tip-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .tip h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .tip p {
+            color: var(--color-muted);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        footer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+            color: var(--color-muted);
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            main {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">
+            <div class="logo-icon">🅿️</div>
+            <span>Parkplatz Notifier</span>
+        </a>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </nav>
+
+    <main>
+        <h1>Support</h1>
+        <p class="subtitle">We're here to help you get the most out of Parkplatz Notifier.</p>
+
+        <div class="contact-card">
+            <h2>Need Help?</h2>
+            <p>Have a question, found a bug, or want to suggest a feature? We'd love to hear from you.</p>
+            <a href="mailto:your-email@example.com" class="contact-btn">
+                ✉️ Contact Support
+            </a>
+        </div>
+
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">How do I book a parking spot?</div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    When you arrive at your designated parking location, the app will automatically detect your GPS position. Simply tap the "Book Spot" button to reserve your parking space. The booking will only work when you're physically within the parking zone set by your admin.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Why can't I book a spot?</div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    There are a few reasons you might not be able to book: (1) You're not within the GPS boundary of the parking location, (2) All spots are currently occupied, (3) You've already booked a spot today, or (4) Location services are disabled on your device. Check your device settings and ensure location access is granted to Parkplatz Notifier.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How does automatic spot release work?</div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    If enabled by your admin, the app can automatically release your parking spot when you leave the parking area after working hours. This ensures that spots become available for others as soon as you depart. You can also manually release your spot at any time through the app.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">When do parking spots reset?</div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    All parking spot reservations reset automatically at midnight every day. This ensures everyone has a fair chance to book a spot each new day.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How do I create a parking group?</div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    To create a parking group, go to Settings → Create New Group. You'll need to set the parking location on the map, define the number of available spots (1-10), and optionally customize notification messages. Once created, you can invite users directly from your phone contacts.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How do I invite users to my parking group?</div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    As an admin, go to your Group Panel and tap "Invite Users". You can select contacts directly from your phone. They'll receive an invitation to join your parking group.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What's the admin PIN for?</div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    The admin PIN adds an extra layer of security to admin functions like editing group settings, managing users, or deleting the group. This prevents accidental or unauthorized changes to your parking setup.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How do I reset my password?</div>
+            <div class="faq-answer">
+                <div class="faq-answer-content">
+                    On the login screen, tap "Forgot Password". Enter your email address and we'll send you a link to reset your password. Check your spam folder if you don't see the email within a few minutes.
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h2>Quick Tips</h2>
+            
+            <div class="tip">
+                <div class="tip-icon">📍</div>
+                <div>
+                    <h3>Enable Location Always</h3>
+                    <p>For best results, allow location access "Always" so automatic spot release works when you leave.</p>
+                </div>
+            </div>
+            
+            <div class="tip">
+                <div class="tip-icon">🔔</div>
+                <div>
+                    <h3>Enable Notifications</h3>
+                    <p>Stay informed about spot availability by allowing push notifications from the app.</p>
+                </div>
+            </div>
+            
+            <div class="tip">
+                <div class="tip-icon">🚗</div>
+                <div>
+                    <h3>Mark Non-Driving Days</h3>
+                    <p>If you're not driving to work, notify your group so others know a spot might be available.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Parkplatz Notifier. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
