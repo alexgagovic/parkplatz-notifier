@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +7,11 @@
 
     <link rel="alternate" hreflang="en" href="https://alexgagovic.github.io/parkplatz-notifier/support.html">
     <link rel="alternate" hreflang="de" href="https://alexgagovic.github.io/parkplatz-notifier/support-de.html">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --color-dark: #0a0a0b;
@@ -24,20 +24,20 @@
             --font-display: 'Instrument Serif', Georgia, serif;
             --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         }
-        
+
         *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        
+
         body {
             font-family: var(--font-body);
             background: var(--color-dark);
             color: var(--color-light);
             line-height: 1.7;
         }
-        
+
         nav {
             padding: 1.25rem 2rem;
             display: flex;
@@ -45,7 +45,7 @@
             align-items: center;
             border-bottom: 1px solid var(--color-border);
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
@@ -55,7 +55,7 @@
             text-decoration: none;
             color: var(--color-light);
         }
-        
+
         .logo-icon {
             width: 36px;
             height: 36px;
@@ -66,7 +66,7 @@
             justify-content: center;
             font-size: 1.25rem;
         }
-        
+
         .nav-links {
             display: flex;
             align-items: center;
@@ -79,24 +79,24 @@
             font-size: 0.9rem;
             transition: color 0.2s;
         }
-        
+
         .back-link:hover {
             color: var(--color-light);
         }
-        
+
         main {
             max-width: 800px;
             margin: 0 auto;
             padding: 4rem 2rem;
         }
-        
+
         h1 {
             font-family: var(--font-display);
             font-size: 3rem;
             font-weight: 400;
             margin-bottom: 0.5rem;
         }
-        
+
         .subtitle {
             color: var(--color-muted);
             font-size: 1.1rem;
@@ -104,7 +104,7 @@
             padding-bottom: 2rem;
             border-bottom: 1px solid var(--color-border);
         }
-        
+
         .contact-card {
             background: var(--color-surface);
             border: 1px solid var(--color-border);
@@ -113,17 +113,17 @@
             margin-bottom: 3rem;
             text-align: center;
         }
-        
+
         .contact-card h2 {
             font-size: 1.25rem;
             margin-bottom: 1rem;
         }
-        
+
         .contact-card p {
             color: var(--color-muted);
             margin-bottom: 1.5rem;
         }
-        
+
         .contact-btn {
             display: inline-flex;
             align-items: center;
@@ -137,19 +137,19 @@
             font-size: 0.9rem;
             transition: transform 0.2s, box-shadow 0.2s;
         }
-        
+
         .contact-btn:hover {
             transform: scale(1.02);
             box-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
         }
-        
+
         h2.faq-title {
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
             color: var(--color-accent);
         }
-        
+
         .faq-item {
             background: var(--color-surface);
             border: 1px solid var(--color-border);
@@ -157,7 +157,7 @@
             margin-bottom: 1rem;
             overflow: hidden;
         }
-        
+
         .faq-question {
             padding: 1.25rem 1.5rem;
             cursor: pointer;
@@ -167,50 +167,50 @@
             font-weight: 500;
             transition: background 0.2s;
         }
-        
+
         .faq-question:hover {
             background: var(--color-surface-elevated);
         }
-        
+
         .faq-question::after {
             content: '+';
             font-size: 1.5rem;
             color: var(--color-muted);
             transition: transform 0.2s;
         }
-        
+
         .faq-item.active .faq-question::after {
             transform: rotate(45deg);
         }
-        
+
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
         }
-        
+
         .faq-item.active .faq-answer {
             max-height: 500px;
         }
-        
+
         .faq-answer-content {
             padding: 0 1.5rem 1.25rem;
             color: var(--color-muted);
         }
-        
+
         .tips-section {
             margin-top: 3rem;
             padding-top: 3rem;
             border-top: 1px solid var(--color-border);
         }
-        
+
         .tips-section h2 {
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
             color: var(--color-accent);
         }
-        
+
         .tip {
             display: flex;
             gap: 1rem;
@@ -220,24 +220,24 @@
             border-radius: 12px;
             border: 1px solid var(--color-border);
         }
-        
+
         .tip-icon {
             font-size: 1.5rem;
             flex-shrink: 0;
         }
-        
+
         .tip h3 {
             font-size: 1rem;
             font-weight: 600;
             margin-bottom: 0.25rem;
         }
-        
+
         .tip p {
             color: var(--color-muted);
             font-size: 0.9rem;
             margin: 0;
         }
-        
+
         footer {
             max-width: 800px;
             margin: 0 auto;
@@ -247,12 +247,12 @@
             color: var(--color-muted);
             font-size: 0.85rem;
         }
-        
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
             }
-            
+
             main {
                 padding: 2rem 1.5rem;
             }
@@ -266,146 +266,146 @@
             <span>Parkplatz Notifier</span>
         </a>
         <div class="nav-links">
-            <a href="support-de.html" class="back-link" hreflang="de">Deutsch</a>
-            <a href="index.html" class="back-link">← Back to Home</a>
+            <a href="support.html" class="back-link" hreflang="en">English</a>
+            <a href="index.html" class="back-link">← Zur Startseite</a>
         </div>
     </nav>
 
     <main>
         <h1>Support</h1>
-        <p class="subtitle">We're here to help you get the most out of Parkplatz Notifier.</p>
+        <p class="subtitle">Wir helfen Ihnen gerne weiter, damit Parkplatz Notifier für Sie funktioniert.</p>
 
         <div class="contact-card">
-            <h2>Need Help?</h2>
-            <p>Have a question, found a bug, or want to suggest a feature? We'd love to hear from you.</p>
+            <h2>Brauchen Sie Hilfe?</h2>
+            <p>Haben Sie eine Frage, einen Fehler gefunden oder einen Vorschlag? Wir freuen uns über Ihre Nachricht.</p>
             <a href="mailto:alexgagovic.srb@gmail.com" class="contact-btn">
-                ✉️ Contact Support
+                ✉️ Support kontaktieren
             </a>
         </div>
 
-        <h2 class="faq-title">Frequently Asked Questions</h2>
+        <h2 class="faq-title">Häufige Fragen</h2>
 
         <div class="faq-item">
-            <div class="faq-question">How do I book a parking spot?</div>
+            <div class="faq-question">Wie buche ich einen Parkplatz?</div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    Open the User tab and tap a free space to take it. You can do this from anywhere — at home the night before, or on the way in. You do not need to be at the car park, and you do not need to allow location access.
+                    Öffnen Sie den Tab „Benutzer“ und tippen Sie auf einen freien Platz, um ihn zu nehmen. Das geht von überall — am Vorabend von zu Hause aus oder unterwegs. Sie müssen nicht beim Parkplatz sein, und Sie müssen keinen Standortzugriff erlauben.
                 </div>
             </div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">Why can't I book a spot?</div>
+            <div class="faq-question">Warum kann ich keinen Platz buchen?</div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    Usually one of two things: every space in the group is already taken, or you are already using a space. You can only hold one space at a time, so release the one you have before taking another. Location access is not required for booking and is never the reason a booking is refused.
+                    Meistens aus einem von zwei Gründen: Alle Plätze der Gruppe sind bereits belegt, oder Sie belegen selbst schon einen Platz. Sie können immer nur einen Platz gleichzeitig haben — geben Sie Ihren aktuellen Platz frei, bevor Sie einen anderen nehmen. Der Standortzugriff ist für das Buchen nicht nötig und nie der Grund für eine Ablehnung.
                 </div>
             </div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">How do I release my spot?</div>
+            <div class="faq-question">Wie gebe ich meinen Platz wieder frei?</div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    Tap your space again in the User tab to release it, and everyone in the group is notified that it is free. Spaces are not released automatically when you drive away, so please release yours when you leave. Anything still held is cleared at midnight.
+                    Tippen Sie im Tab „Benutzer“ erneut auf Ihren Platz. Alle in der Gruppe werden benachrichtigt, dass er frei ist. Plätze werden nicht automatisch freigegeben, wenn Sie wegfahren — bitte geben Sie Ihren Platz frei, wenn Sie fahren. Was um Mitternacht noch belegt ist, wird zurückgesetzt.
                 </div>
             </div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">What does the arrival reminder do?</div>
+            <div class="faq-question">Was macht die Ankunftserinnerung?</div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    This is the one feature that uses location. If you allow "Always" access, the app notices when you reach the car park and offers you a space if any are free. The check happens entirely on your iPhone — your position is never sent to us. Everything else in the app works without location access.
+                    Das ist die einzige Funktion, die den Standort verwendet. Wenn Sie den Zugriff auf „Immer“ stellen, bemerkt die App Ihre Ankunft beim Parkplatz und bietet Ihnen einen Platz an, sofern einer frei ist. Der Vergleich passiert vollständig auf Ihrem iPhone — Ihre Position wird nie an uns übertragen. Alles andere in der App funktioniert ohne Standortzugriff.
                 </div>
             </div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">When do parking spots reset?</div>
+            <div class="faq-question">Wann werden die Plätze zurückgesetzt?</div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    Every space is released at midnight, Vienna time, and the "not needing a space today" marks are cleared at the same time. Everyone starts the new day with the same chance of getting a space.
+                    Jeden Tag um Mitternacht (Wiener Zeit) werden alle Plätze freigegeben, und die Markierungen „Heute nicht nötig“ werden zur selben Zeit gelöscht. Alle starten mit denselben Chancen in den neuen Tag.
                 </div>
             </div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">How do I create a parking group?</div>
+            <div class="faq-question">Wie erstelle ich eine Parkgruppe?</div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    Open the Admin tab and unlock it with your PIN. Search for the car park's address on the map, set how many spaces it has, give it a name, and create it. A free account can create up to 2 groups with up to 10 spaces each. Once the group exists you can invite people from your phone contacts or by email address.
+                    Öffnen Sie den Tab „Admin“ und entsperren Sie ihn mit Ihrer PIN. Suchen Sie die Adresse des Parkplatzes auf der Karte, legen Sie die Anzahl der Plätze fest, geben Sie der Gruppe einen Namen und erstellen Sie sie. Ein kostenloses Konto kann bis zu 2 Gruppen mit je bis zu 10 Plätzen anlegen. Danach können Sie Personen aus Ihren Kontakten oder per E-Mail-Adresse einladen.
                 </div>
             </div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">How do I invite users to my parking group?</div>
+            <div class="faq-question">Wie lade ich Personen in meine Parkgruppe ein?</div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    As an admin, go to your Group Panel and tap "Invite Users". You can select contacts directly from your phone. They'll receive an invitation to join your parking group.
+                    Öffnen Sie als Admin Ihr Gruppen-Panel und tippen Sie auf „Benutzer einladen“. Sie können Kontakte direkt von Ihrem Telefon auswählen. Die eingeladene Person erhält eine Einladung zu Ihrer Parkgruppe.
                 </div>
             </div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">What's the admin PIN for?</div>
+            <div class="faq-question">Wofür ist die Admin-PIN?</div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    The admin PIN adds an extra layer of security to admin functions like editing group settings, managing users, or deleting the group. This prevents accidental or unauthorized changes to your parking setup.
+                    Die Admin-PIN schützt Admin-Funktionen wie das Bearbeiten von Gruppeneinstellungen, das Verwalten von Mitgliedern oder das Löschen einer Gruppe. So sind versehentliche oder unbefugte Änderungen an Ihrem Parkplatz ausgeschlossen.
                 </div>
             </div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">How do I reset my password?</div>
+            <div class="faq-question">Wie setze ich mein Passwort zurück?</div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    On the login screen, tap "Forgot Password". Enter your email address and we'll send you a link to reset your password. Check your spam folder if you don't see the email within a few minutes.
+                    Tippen Sie im Anmeldebildschirm auf „Passwort vergessen“. Geben Sie Ihre E-Mail-Adresse ein, und wir senden Ihnen einen Link zum Zurücksetzen. Sehen Sie bitte im Spam-Ordner nach, falls die E-Mail nicht innerhalb weniger Minuten ankommt.
                 </div>
             </div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">How do I delete my account?</div>
+            <div class="faq-question">Wie lösche ich mein Konto?</div>
             <div class="faq-answer">
                 <div class="faq-answer-content">
-                    In the User tab, open Edit Profile from the top right and choose Delete Account. You confirm with your password, and your account and data are removed — along with any groups you created. There is more detail in the <a href="privacy.html" style="color: var(--color-accent);">privacy policy</a>.
+                    Öffnen Sie im Tab „Benutzer“ oben rechts „Profil bearbeiten“ und wählen Sie „Konto löschen“. Sie bestätigen mit Ihrem Passwort, danach werden Ihr Konto und Ihre Daten gelöscht — samt aller Gruppen, die Sie erstellt haben. Näheres steht in der <a href="privacy-de.html" style="color: var(--color-accent);">Datenschutzerklärung</a>.
                 </div>
             </div>
         </div>
 
         <div class="tips-section">
-            <h2>Quick Tips</h2>
-            
+            <h2>Kurze Tipps</h2>
+
             <div class="tip">
                 <div class="tip-icon">📍</div>
                 <div>
-                    <h3>Enable Location Always</h3>
-                    <p>Allow location access "Always" if you want the arrival reminder. It is optional — everything else works without it.</p>
+                    <h3>Standort auf „Immer“ stellen</h3>
+                    <p>Erlauben Sie den Standortzugriff „Immer“, wenn Sie die Ankunftserinnerung möchten. Sie ist optional — alles andere funktioniert auch ohne.</p>
                 </div>
             </div>
-            
+
             <div class="tip">
                 <div class="tip-icon">🔔</div>
                 <div>
-                    <h3>Enable Notifications</h3>
-                    <p>Stay informed about spot availability by allowing push notifications from the app.</p>
+                    <h3>Benachrichtigungen aktivieren</h3>
+                    <p>Erlauben Sie Push-Benachrichtigungen, um zu erfahren, wann Plätze belegt oder wieder frei werden.</p>
                 </div>
             </div>
-            
+
             <div class="tip">
                 <div class="tip-icon">🚗</div>
                 <div>
-                    <h3>Mark Non-Driving Days</h3>
-                    <p>If you're not driving to work, notify your group so others know a spot might be available.</p>
+                    <h3>Tage ohne Auto markieren</h3>
+                    <p>Wenn Sie nicht mit dem Auto kommen, sagen Sie es Ihrer Gruppe — so weiß jemand anderer, dass ein Platz frei werden könnte.</p>
                 </div>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>© 2026 Parkplatz Notifier. All rights reserved.</p>
+        <p>© 2026 Parkplatz Notifier. Alle Rechte vorbehalten.</p>
     </footer>
 
     <script>
